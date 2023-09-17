@@ -39,7 +39,7 @@ namespace sdds{
         for (len = 0; str[len]; len++);
         return len;
     }
-// if "find" is found in "str" it will return the addres of the match
+// if "find" is found in "str" it will return the address of the match
 // if not found it will returns nullptr (zero)
     const char* strStr(const char* str, const char* find) {
         const char* faddress = nullptr;

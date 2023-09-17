@@ -16,6 +16,7 @@ namespace sdds{
         }
         return foundIndex;
     }
+
     int readWord(char* word, FILE* fptr, int maxLen) {
         int ch;
         int i = 0;
