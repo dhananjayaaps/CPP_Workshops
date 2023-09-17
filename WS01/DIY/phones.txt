@@ -5,7 +5,7 @@ Firmus Piett	301	555	7279
 Wedge Antilles	217	555	6370
 Mon Mothma	905	555	4329
 Count Dooku	416	555	7110
-Nien Nunb	647	555	5708
+Nien Nunb   647 555	5708
 Ponda Baba	301	555	3388
 Max Rebo	217	555	4953
 Salacious B. Crumb	905	555	4613

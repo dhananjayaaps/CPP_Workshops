@@ -12,7 +12,7 @@
 ***********************************************************************/
 #include <iostream>
 #include "Phone.h"
-#include "Phone.h"  // this is intentional
+
 using namespace sdds;
 int main() {
    std::cout << "Enter the following Data:" << std::endl
