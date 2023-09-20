@@ -6,7 +6,6 @@ using namespace std;
 
 namespace sdds {
 
-
     void searchByName(const char* partialName, FILE* file ){
         char name[51];
         char areaCode[6];
@@ -14,11 +13,11 @@ namespace sdds {
         char number[6];
 
         while (fscanf(file, "%50[^\t]\t%4s\t%4s\t%4s\n", name, areaCode, prefix,number) != EOF) {
-            char temporyPartialName[51], temporyName[51];
-            toLowerCaseAndCopy(temporyPartialName, partialName);
-            toLowerCaseAndCopy(temporyName, name);
+            char tempPartialName[51], tempName[51];
+            toLowerCaseAndCopy(tempPartialName, partialName);
+            toLowerCaseAndCopy(tempName, name);
 
-            if (strStr(temporyName, temporyPartialName) != nullptr) {
+            if (strStr(tempName, tempPartialName) != nullptr) {
                 cout << name << ": (" << areaCode << ") " << prefix << "-" << number << endl ;
             }
         }
@@ -31,17 +30,16 @@ namespace sdds {
 
         FILE* file = fopen(fileName, "r");
         if (!file) {
-            cout << "Error: Unable to open file " << fileName << endl;
+            cout << fileName <<" file not found!"<< endl;
+            cout << "Thank you for using " << programTitle << " directory." << endl;
             return;
         }
 
         char partialName[51];
-        cout << "Enter a partial name to search (no spaces) or enter '!' to exit" << endl;
 
         while (true) {
-
+            cout << "Enter a partial name to search (no spaces) or enter '!' to exit" << endl;
             FILE* file2 = fopen(fileName, "r");
-
             cout << "> ";
             cin.getline(partialName, 51);
 
@@ -51,7 +49,6 @@ namespace sdds {
             searchByName(partialName, file2);
             fclose(file2);
         }
-
 
         cout << "Thank you for using " << programTitle << " directory." << endl;
     }
