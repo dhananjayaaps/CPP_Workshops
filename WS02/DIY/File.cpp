@@ -23,5 +23,6 @@ namespace sdds {
    void closeFile() {
       if (fptr) fclose(fptr);
    }
+   bool load ()
 
 }
