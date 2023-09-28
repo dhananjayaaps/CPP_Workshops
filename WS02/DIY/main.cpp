@@ -10,26 +10,12 @@
 // -----------------------------------------------------------
 // Name            Date            Reason
 ***********************************************************************/
-//#include "Population.h"
-//using namespace sdds;
-//int main() {
-//   if (load("PCpopulations.csv")) {
-//      display();
-//   }
-//   deallocateMemory();
-//   return 0;
-//}
-
-#include <iostream>
 #include "Population.h"
 using namespace sdds;
 int main() {
-    char code[4]{};
-    while(getPostalCode(code)){
-        if(load("PCpopulations.csv", code)) {
-            display();
-        }
-        deallocateMemory();
-    }
-    return 0;
+   if (load("PCpopulations.csv")) {
+      display();
+   }
+   deallocateMemory();
+   return 0;
 }

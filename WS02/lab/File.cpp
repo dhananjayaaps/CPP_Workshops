@@ -30,6 +30,7 @@ namespace sdds {
       rewind(fptr);
       return noOfRecs;
    }
+
    void closeFile() {
       if (fptr) fclose(fptr);
    }
@@ -45,7 +46,6 @@ namespace sdds {
         }
         return false;
     }
-
 
     bool read(int& empNo) {
         if (fscanf(fptr, "%d,", &empNo) == 1) {

@@ -72,7 +72,6 @@ namespace sdds {
         return true;
     }
 
-
     void display(const Employee& emp) {
         std::cout << emp.m_empNo << ": " << emp.m_name << ", $" << static_cast<int>(emp.m_salary) << std::endl;
     }
