@@ -24,6 +24,7 @@ namespace sdds{
 
     void Train::set(const char *newName) {
         finalize();
+
         if (newName && *newName) {
             name = new char[strlen(newName) + 1];
             strcpy(name, newName);
@@ -35,7 +36,7 @@ namespace sdds{
             numPassengers = noOfPassengers;
             departureTime = departure;
         } else {
-            initialize();
+            finalize();
         }
 
     }
@@ -46,7 +47,8 @@ namespace sdds{
     }
 
     void Train::finalize() {
-        delete[] name;
+        delete [] name;
+        name = nullptr;
         initialize();
     }
 
@@ -79,12 +81,4 @@ namespace sdds{
     Train::~Train() {
         finalize();
     }
-
 }
-
-
-
-
-
-
-
