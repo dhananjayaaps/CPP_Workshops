@@ -1,15 +1,3 @@
-/***********************************************************************
-// OOP244 Workshop #4 lab (part 1): tester program
-//
-// File  main.cpp
-// Version 1.0
-// Author   Asad Norouzi, revised by Fardad Soleimanloo
-// Description
-//
-// Revision History
-// -----------------------------------------------------------
-// Name                 Date            Reason
-***********************************************************************/
 #include<iostream>
 #include<iomanip>
 #include "CarInventory.h"
