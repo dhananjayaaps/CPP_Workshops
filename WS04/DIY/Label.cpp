@@ -44,45 +44,46 @@ namespace sdds{
         }
     }
 
-    std::istream &Label::readLabel() {
+    istream &Label::readLabel() {
         char input[71];
-        std::cout << "Enter label content (up to 70 characters): ";
-        std::cin.getline(input, 71);
+        cout << "> ";
+        cin.getline(input, 71);
         setContent(input);
-        return std::cin;
+        return cin;
     }
 
-    std::ostream& Label::printLabel() const {
+    ostream& Label::printLabel() const {
         if(m_content){
             int len = strlen(m_content);
             int width = len + 4;
-            std::cout << m_frame[0];
+            cout << m_frame[0];
             for (int i = 0; i < width - 2; i++) {
-                std::cout << m_frame[1];
+                cout << m_frame[1];
             }
-            std::cout << m_frame[2] << std::endl;
+            cout << m_frame[2] << endl;
 
-            std::cout << m_frame[7];
+            cout << m_frame[7];
             for (int i = 0; i < width - 2; i++) {
-                std::cout << ' ';
+                cout << ' ';
             }
-            std::cout << m_frame[3] << std::endl;
+            cout << m_frame[3] <<endl;
 
-            std::cout << m_frame[7] << ' ' << m_content << ' ' << m_frame[3] << std::endl;
+            cout << m_frame[7] << ' ' << m_content << ' ' << m_frame[3] << endl;
 
-            std::cout << m_frame[7];
+            cout << m_frame[7];
             for (int i = 0; i < width - 2; i++) {
-                std::cout << ' ';
+                cout << ' ';
             }
-            std::cout << m_frame[3] << std::endl;
+            cout << m_frame[3] << endl;
 
-            std::cout << m_frame[6];
+            cout << m_frame[6];
             for (int i = 0; i < width - 2; i++) {
-                std::cout << m_frame[5];
+                cout << m_frame[5];
             }
-            std::cout << m_frame[4];
+            cout << m_frame[4];
+            cout << endl;
         }
-        return std::cout;
+        return cout;
     }
 
     Label& Label::text(const char* contentArg) {
