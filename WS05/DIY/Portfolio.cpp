@@ -1,18 +1,8 @@
-/***********************************************************************
-// OOP244 Workshop #5 DIY (part 2): tester program
-//
-// File  Portfolio.cpp
-// Version 1.0
-// Author   Asam Gulaid, revised by Fardad Soleimanloo
-// Description
-//
-// Revision History
-// -----------------------------------------------------------
-// Name                 Date            Reason
-***********************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Portfolio.h"
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 namespace sdds {
@@ -28,6 +18,7 @@ namespace sdds {
         m_stock[0] = 0;
         m_type = 'E';
     }
+
     Portfolio::Portfolio(double value, const char* stock, char type) {
         emptyPortfolio();
         if (value >= 0 && ( type == 'V' || type == 'G' || type == 'I') ) {
@@ -67,7 +58,66 @@ namespace sdds {
         return cout;
     }
 
+    Portfolio::operator double() const {
+        return m_value;
+    }
 
+    Portfolio::operator const char*() const {
+        return m_stock;
+    }
 
+    Portfolio::operator char() const {
+        return m_type;
+    }
+
+    Portfolio::operator bool() const {
+        return (m_type == 'G' || m_type == 'V' || m_type == 'I');
+    }
+
+    Portfolio& Portfolio::operator+=(double amount) {
+        if (*this && amount >= 0) {
+            m_value += amount;
+        }
+        return *this;
+    }
+
+    Portfolio& Portfolio::operator-=(double amount) {
+        if (*this && m_value - amount >= 0) {
+            m_value -= amount;
+        }
+        return *this;
+    }
+
+    bool Portfolio::operator~() const {
+        return (m_value < 0);
+    }
+
+    Portfolio &operator<<(Portfolio &left, Portfolio &right) {
+        if (left && right) {
+            left.m_value += right.m_value;
+            right.emptyPortfolio();
+        }
+        return left;
+    }
+
+    Portfolio &operator>>(Portfolio &left, Portfolio &right) {
+        if (left && right) {
+            right.m_value += left.m_value;
+            left.emptyPortfolio();
+        }
+        return left;
+    }
+
+    double operator+(const Portfolio &left, const Portfolio &right) {
+        if (left && right) {
+            return left.m_value + right.m_value;
+        }
+        return 0;
+    }
+
+    double& operator+=(double& left, const Portfolio& right) {
+            left += right.m_value;
+        return left;
+    }
 
 }

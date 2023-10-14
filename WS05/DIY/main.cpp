@@ -1,15 +1,3 @@
-/***********************************************************************
-// OOP244 Workshop #5 DIY (part 2): tester program
-//
-// File  main.cpp
-// Version 1.0
-// Author   Asam Gulaid, revised by Fardad Soleimanloo
-// Description
-//
-// Revision History
-// -----------------------------------------------------------
-// Name                 Date            Reason
-***********************************************************************/
 #include <iostream>
 #include "Portfolio.h"
 using namespace std;
