@@ -1,0 +1,3 @@
+E:/Moksha/CPP_Workshops/WS05/DIY/cmake-build-debug/CMakeFiles/DIY.dir
+E:/Moksha/CPP_Workshops/WS05/DIY/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Moksha/CPP_Workshops/WS05/DIY/cmake-build-debug/CMakeFiles/rebuild_cache.dir
