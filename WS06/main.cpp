@@ -1,3 +1,12 @@
+// Workshop #6:
+// Version: 1.0
+// File name: main.cpp
+// Date: 2021/12/02
+// Author: Wail Mardini
+// Description:
+// This file tests the lab section of your workshop
+///////////////////////////////////////////////////
+
 #include <iostream>
 #include <fstream>
 #include "HealthCard.h"
@@ -22,7 +31,7 @@ int main() {
    for (i = 0; i < recs; i++) {
       C = ReadCardFromFile(CardFile);
       cout << C << endl;
-      if (CardFile) 
+      if (CardFile)
           C.print(goodCardFile, true);
    }
    if (i == recs)
